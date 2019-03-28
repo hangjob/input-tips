@@ -12,7 +12,7 @@
 </div>
 ```
 
-# 初始化
+# init
 ``` js
 $(".email-select").inputTips({
     selectors:$('.email-select'),//显示邮箱列表元素
