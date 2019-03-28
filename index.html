@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输入提示</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none}
+        body{background-color: #eaeef2;font-size: 16px;}
+        input{height: 30px;width: 100%;}
+        h2{margin-bottom: 20px}
+
+        .email{width: 500px;padding: 30px;margin: 100px auto;border-radius: 10px;-webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;transition: all .3s ease;-webkit-filter: blur(0);filter: blur(0);background-color: #fff;
+        text-align: center;-webkit-box-shadow: 0 7px 14px 0 rgba(151,160,204,.12);box-shadow: 0 7px 14px 0 rgba(151,160,204,.12);
+        }
+        .email-select ul li{border: 1px solid #405633; border-bottom: none;padding: 10px 0;background-color: #dddddd;}
+        .email-select ul li.active{color: #333333;background-color: #ffffff;}
+        .email-select ul li:last-child{border-bottom: 1px solid #405633;}
+    </style>
+</head>
+<body>
+    <div class="email">
+        <h2>输入提示插---$.fn扩展</h2>
+        <input type="text"  autocomplete="off" name="email" placeholder="请输入邮箱"/>
+        <div class="email-select">
+            <ul></ul>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/livequery/1.1.1/jquery.livequery.js"></script>
+    <script src="./input-tips.js"></script>
+    <script>
+        $(".email-select").inputTips({
+            selectors:$('.email-select'),
+            inputstrike:$('input'),
+        });
+    </script>
+</body>
+</html>
