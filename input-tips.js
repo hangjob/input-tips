@@ -17,7 +17,7 @@
         //构造inputTips原型--扩展功能函数
         inputTips.prototype = {
             init:function(){
-                this.selectors = $(this.options.selectors);
+                this.selectors = this.element;
                 this.inputstrike = $(this.options.inputstrike);
                 // this.emailArr = this.options.emailArr;
                 this.listLi = '';//li的dom
@@ -145,7 +145,8 @@
             //jquery的单例模式就是说，首先判断对象有没有当前实例，没有再添加，需要用到jquery的data（）方法 ，此模式对于给对象添加方法比较管用，起到省资源的作用
             var me = $(this),
                 instance = me.data('inputTips');
-
+            //me 就是指向当前的调用着
+            
             if(!instance){
                 instance = me.data('inputTips',(new inputTips(me,options)));
             }
@@ -162,6 +163,5 @@
         emailArr:['@sina.com','@qq.com','@163.com','@126.com','@gmail.com','@139.com','@yahoo.com'],
         keydown:true,//是否开开启键盘
     }
-
 
 })(jQuery)
